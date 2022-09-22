@@ -1,0 +1,497 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/s0w8JbuNNxL1YgaHeDWih12C3jG.jpg",
+            "id": 63926,
+            "name": "One-Punch Man",
+            "original_language": "ja",
+            "original_name": "ワンパンマン",
+            "overview": "Saitama is a hero who only became a hero for fun. After three years of “special” training, though, he’s become so strong that he’s practically invincible. In fact, he’s too strong — even his mightiest opponents are taken out with a single punch, and it turns out that being devastatingly powerful is actually kind of a bore. With his passion for being a hero lost along with his hair, yet still faced with new enemies every day, how much longer can he keep it going?",
+            "poster_path": "/iE3s0lG5QVdEHOEZnoAxjmMtvne.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16,
+                35
+            ],
+            "popularity": 167.56,
+            "first_air_date": "2015-10-05",
+            "vote_average": 8.376,
+            "vote_count": 2798,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bY17tTK5GOEwxIValL0MBHGt6T6.jpg",
+            "id": 13916,
+            "name": "Death Note",
+            "original_language": "ja",
+            "original_name": "DEATH NOTE",
+            "overview": "Light Yagami is an ace student with great prospects—and he’s bored out of his mind. But all that changes when he finds the Death Note, a notebook dropped by a rogue Shinigami death god. Any human whose name is written in the notebook dies, and Light has vowed to use the power of the Death Note to rid the world of evil. But will Light succeed in his noble goal, or will the Death Note turn him into the very thing he fights against?",
+            "poster_path": "/iigTJJskR1PcjjXqxdyJwVB3BoU.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                9648,
+                10765
+            ],
+            "popularity": 103.652,
+            "first_air_date": "2006-10-04",
+            "vote_average": 8.657,
+            "vote_count": 3012,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2UG177tWHy7xRmMKWJHB7nAUmKd.jpg",
+            "id": 31911,
+            "name": "Fullmetal Alchemist: Brotherhood",
+            "original_language": "ja",
+            "original_name": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+            "overview": "Edward and Alphonse Elric's reckless disregard for alchemy's fun­damental laws ripped half of Ed's limbs from his body and left Al's soul clinging to a cold suit of armor. To restore what was lost, the brothers scour a war-torn land for the Philosopher's Sto­ne, a fabled relic which grants the ability to perform alchemy in impossible ways.\n\nThe Elrics are not alone in their search; the corrupt State Military is also eager to harness the artifact's power. So too are the strange Homunculi and their shadowy creator. The mythical gem lures exotic alchemists from distant kingdoms, scarring some deeply enough to inspire murder. As the Elrics find their course altered by these enemies and allies, their purpose remains unchanged – and their bond unbreakable.",
+            "poster_path": "/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16,
+                10765
+            ],
+            "popularity": 83.179,
+            "first_air_date": "2009-04-05",
+            "vote_average": 8.715,
+            "vote_count": 1424,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5PUo6C8LAzcTzkuPKgLXuUFjafi.jpg",
+            "id": 45782,
+            "name": "Sword Art Online",
+            "original_language": "ja",
+            "original_name": "ソードアート・オンライン",
+            "overview": "In the near future, a Virtual Reality Massive Multiplayer Online Role-Playing Game (VRMMORPG) called Sword Art Online has been released where players control their avatars with their bodies using a piece of technology called Nerve Gear. One day, players discover they cannot log out, as the game creator is holding them captive unless they reach the 100th floor of the game's tower and defeat the final boss. However, if they die in the game, they die in real life. Their struggle for survival starts now...",
+            "poster_path": "/mK9zGGk90VmHLOnK79sqlGFjZjW.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                10765,
+                10759
+            ],
+            "popularity": 62.342,
+            "first_air_date": "2012-07-08",
+            "vote_average": 8.3,
+            "vote_count": 1379,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ol0H2DGp4ifBHA4JDlCpwJWxnY2.jpg",
+            "id": 65930,
+            "name": "My Hero Academia",
+            "original_language": "ja",
+            "original_name": "僕のヒーローアカデミア",
+            "overview": "In a world where eighty percent of the population has some kind of super-powered Quirk, Izuku was unlucky enough to be born completely normal. But that won't stop him from enrolling in a prestigious hero academy. Now, he'll get his first taste of brutal rivalry from other schools as he braves the cutthroat, no-holds-barred provisional license exam.",
+            "poster_path": "/phuYuzqWW9ru8EA3HVjE9W2Rr3M.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16
+            ],
+            "popularity": 71.281,
+            "first_air_date": "2016-04-03",
+            "vote_average": 8.728,
+            "vote_count": 3850,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nTvM4mhqNlHIvUkI1gVnW6XP7GG.jpg",
+            "id": 85937,
+            "name": "Demon Slayer: Kimetsu no Yaiba",
+            "original_language": "ja",
+            "original_name": "鬼滅の刃",
+            "overview": "It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a “demon slayer” so that he can turn his sister back into a human, and kill the demon that massacred his family.",
+            "poster_path": "/wrCVHdkBlBWdJUZPvnJWcBRuhSY.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                10765,
+                10759
+            ],
+            "popularity": 101.635,
+            "first_air_date": "2019-04-06",
+            "vote_average": 8.726,
+            "vote_count": 4348,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/A702KA1gXlI3hB33hdhwPM708pY.jpg",
+            "id": 46298,
+            "name": "Hunter x Hunter",
+            "original_language": "ja",
+            "original_name": "ハンターｘハンター",
+            "overview": "Twelve-year-old Gon Freecss one day discovers that the father he had always been told was dead was alive. His Father, Ging, is a Hunter — a member of society's elite with a license to go anywhere or do almost anything. Gon, determined to follow in his father's footsteps, decides to take the Hunter Examination and eventually find his father to prove himself as a Hunter in his own right. But on the way, he learns that there is more to becoming a Hunter than previously thought, and the challenges that he must face are considered the toughest in the world.",
+            "poster_path": "/tolQj5yffSxkEGXusPwNcvYrbph.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16,
+                18
+            ],
+            "popularity": 174.029,
+            "first_air_date": "2011-10-02",
+            "vote_average": 8.7,
+            "vote_count": 1208,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mKyXodwDqGpslT1h1v1AuKpjgg2.jpg",
+            "id": 135292,
+            "name": "Tribe Nine",
+            "original_language": "ja",
+            "original_name": "TRIBE NINE",
+            "overview": "In Neo Tokyo, disillusioned youth form tribes that battle each other in an intense game called Extreme Baseball. One night, two kids – Haru Shirogane and Taiga – meet the strongest XB Player Shun Kamiya. Haru and Taiga join Shun's group, the Minato Tribe, to play this cutthroat game against a mysterious man who has begun taking control of all the tribes. Can they defeat him before it’s too late?",
+            "poster_path": "/fH9wo23VGzWIK0rHkEEbidWpK12.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                10765
+            ],
+            "popularity": 15.383,
+            "first_air_date": "2022-01-10",
+            "vote_average": 5.2,
+            "vote_count": 5,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/yOarY3Yo0NMkuTuft87M5oAZa3C.jpg",
+            "id": 61374,
+            "name": "Tokyo Ghoul",
+            "original_language": "ja",
+            "original_name": "東京喰種トーキョーグール",
+            "overview": "Ken Kaneki is a bookworm college student who meets a girl names Rize at a cafe he frequents. They're the same age and have the same interests, so they quickly become close. Little does Kaneki know that Rize is a ghoul – a kind of monster that lives by hunting and devouring human flesh. When part of her special organ – \"the red child\" – is transplanted into Kaneki, he becomes a ghoul himself, trapped in a warped world where humans are not the top of the food chain.",
+            "poster_path": "/y2roOFsew9nJKKVwwJCHSyzgpK9.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16,
+                18,
+                9648
+            ],
+            "popularity": 138.165,
+            "first_air_date": "2014-07-04",
+            "vote_average": 8.5,
+            "vote_count": 1892,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5hS2OIuZSKGkR8R5l3bY5zh04Ce.jpg",
+            "id": 31724,
+            "name": "Code Geass: Lelouch of the Rebellion",
+            "original_language": "ja",
+            "original_name": "コードギアス 反逆のルルーシュ",
+            "overview": "Japan has been invaded and conquered by the Britannian Empire. Japan is now known as Area 11 and its citizens known as Elevens. The Britannian Empire takes away Japan's autonomous power and imposes its rule through the use of Knightmares. The Empire's rule has never faltered, but cracks have begun to show...",
+            "poster_path": "/8p3HXHOQXjMpU9gAkZVAqozhDzQ.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16,
+                18,
+                10765
+            ],
+            "popularity": 49.11,
+            "first_air_date": "2006-10-05",
+            "vote_average": 8.5,
+            "vote_count": 522,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/cHKD3RSK9bushrwarwPelHozctt.jpg",
+            "id": 57041,
+            "name": "Gintama",
+            "original_language": "ja",
+            "original_name": "銀魂",
+            "overview": "In an era where aliens have invaded and taken over feudal Tokyo, an unemployed samurai finds work however he can.",
+            "poster_path": "/mWX2XnjYD8WxglIyTWM7z9FurXt.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16,
+                35,
+                10765
+            ],
+            "popularity": 92.869,
+            "first_air_date": "2006-04-04",
+            "vote_average": 8.078,
+            "vote_count": 135,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/umvu92AfrHep4PO55wxjCNYL40G.jpg",
+            "id": 61459,
+            "name": "Parasyte -the maxim-",
+            "original_language": "ja",
+            "original_name": "寄生獣 セイの格率",
+            "overview": "A species of parasitic aliens descends on Earth and quickly infiltrates humanity by entering the brains of vulnerable targets; insatiable beings that gain total control of their host and are capable of transforming themselves to feed on unsuspecting prey. High school student Shinichi Izumi falls victim to one of these parasites, but the creature fails to take over his brain and ends up in his right hand.",
+            "poster_path": "/2ngHwPQhHGPpLkLQd2MTAI3iXPq.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                18,
+                10765,
+                10759
+            ],
+            "popularity": 42.045,
+            "first_air_date": "2014-10-09",
+            "vote_average": 8.445,
+            "vote_count": 904,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/uAjMQlbPkVHmUahhCouANlHSDW2.jpg",
+            "id": 83097,
+            "name": "The Promised Neverland",
+            "original_language": "ja",
+            "original_name": "約束のネバーランド",
+            "overview": "Surrounded by a forest and a gated entrance, the Grace Field House is inhabited by orphans happily living together as one big family, looked after by their \"Mama,\" Isabella. Although they are required to take tests daily, the children are free to spend their time as they see fit, usually playing outside, as long as they do not venture too far from the orphanage — a rule they are expected to follow no matter what. However, all good times must come to an end, as every few months, a child is adopted and sent to live with their new family... never to be heard from again.\n\nHowever, the three oldest siblings have their suspicions about what is actually happening at the orphanage, and they are about to discover the cruel fate that awaits the children living at Grace Field, including the twisted nature of their beloved Mama.",
+            "poster_path": "/oBgRCpAbtMpk1v8wfdsIph7lPQE.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                9648,
+                10765,
+                10759,
+                18,
+                80
+            ],
+            "popularity": 38.812,
+            "first_air_date": "2019-01-11",
+            "vote_average": 8.7,
+            "vote_count": 848,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/36Ech63X2KU8JUXIBAo167kIC2k.jpg",
+            "id": 42509,
+            "name": "Steins;Gate",
+            "original_language": "ja",
+            "original_name": "Steins;Gate",
+            "overview": "A group of friends have customized their microwave so that it can send text messages to the past. As they perform different experiments, an organization named SERN who has been doing their own research on time travel tracks them down and now the characters have to find a way to avoid being captured by them.",
+            "poster_path": "/6iysgZr6Upm5RlAlVFo5f4D9euu.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10765,
+                10759,
+                16,
+                9648,
+                35,
+                18
+            ],
+            "popularity": 28.32,
+            "first_air_date": "2011-04-06",
+            "vote_average": 8.483,
+            "vote_count": 505,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mLKN1dsimKPiXCZ48KED0X8a02t.jpg",
+            "id": 45790,
+            "name": "JoJo's Bizarre Adventure",
+            "original_language": "ja",
+            "original_name": "ジョジョの奇妙な冒険",
+            "overview": "Follow the intergenerational feud between the Joestar Family and various forces of evil, the most prominent of which is Dio Brando and his followers.",
+            "poster_path": "/ogAWwbh3frWtiTyyXrZaVFtqCgp.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                10759,
+                10765
+            ],
+            "popularity": 93.544,
+            "first_air_date": "2012-10-06",
+            "vote_average": 8.7,
+            "vote_count": 1027,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/veLDNOr8omsQN6hX3HWgq5PVD1P.jpg",
+            "id": 42557,
+            "name": "Kids on the Slope",
+            "original_language": "ja",
+            "original_name": "坂道のアポロン",
+            "overview": "Two different students - a successful but aloof academic and a rebellious but kindhearted delinquent - form a friendship through their love for music.",
+            "poster_path": "/dFwBvUhtV8ynSLaSXfRUYInlTFk.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                18
+            ],
+            "popularity": 12.007,
+            "first_air_date": "2012-04-13",
+            "vote_average": 7.806,
+            "vote_count": 36,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/gmECX1DvFgdUPjtio2zaL8BPYPu.jpg",
+            "id": 95479,
+            "name": "Jujutsu Kaisen",
+            "original_language": "ja",
+            "original_name": "呪術廻戦",
+            "overview": "Yuji Itadori is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a classmate who has been attacked by curses, he eats the finger of Ryomen Sukuna, taking the curse into his own soul. From then on, he shares one body with Ryomen Sukuna. Guided by the most powerful of sorcerers, Satoru Gojo, Itadori is admitted to Tokyo Jujutsu High School, an organization that fights the curses... and thus begins the heroic tale of a boy who became a curse to exorcise a curse, a life from which he could never turn back.",
+            "poster_path": "/g1rK2nRXSidcMwNliWDIroWWGTn.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                10759,
+                10765
+            ],
+            "popularity": 252.681,
+            "first_air_date": "2020-10-03",
+            "vote_average": 8.551,
+            "vote_count": 2349,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/be9gOhCm4wgHDPBO04K29V3oZnw.jpg",
+            "id": 65336,
+            "name": "March Comes in Like a Lion",
+            "original_language": "ja",
+            "original_name": "３月のライオン",
+            "overview": "Rei is a 17-year old professional shōgi player, who lives by himself, not having a real family, and has scarcely any friends. Among his acquaintances is a family, which consists of a young woman, Akari, and two young girls, Hinata and Momo, and who also keep a numerous number of cats.",
+            "poster_path": "/sokReNdjEwG2TkdUzJcVnD6sChT.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                18,
+                35
+            ],
+            "popularity": 20.436,
+            "first_air_date": "2016-10-08",
+            "vote_average": 8.1,
+            "vote_count": 74,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/1Ep6YHL5QcrNC1JN6RYalWRPopi.jpg",
+            "id": 86031,
+            "name": "Dr. Stone",
+            "original_language": "ja",
+            "original_name": "ドクターストーン",
+            "overview": "One fateful day, all of humanity was petrified by a blinding flash of light. After several millennia, high schooler Taiju awakens and finds himself lost in a world of statues. However, he's not alone! His science-loving friend Senku's been up and running for a few months and he's got a grand plan in mind, to kickstart civilization with the power of science!",
+            "poster_path": "/64DIVpWiGlvvJczMnyu8jojSYKm.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                10759,
+                16
+            ],
+            "popularity": 16.036,
+            "first_air_date": "2019-07-05",
+            "vote_average": 8.701,
+            "vote_count": 1092,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/kP5duNJEbTfXpBs6CITsaZ88pQi.jpg",
+            "id": 67075,
+            "name": "Mob Psycho 100",
+            "original_language": "ja",
+            "original_name": "モブサイコ100",
+            "overview": "Shigeo Kageyama, a.k.a. \"Mob,\" is a boy who has trouble expressing himself, but who happens to be a powerful esper. Mob is determined to live a normal life and keeps his ESP suppressed, but when his emotions surge to a level of 100%, something terrible happens to him! As he's surrounded by false espers, evil spirits, and mysterious organizations, what will Mob think? What choices will he make?",
+            "poster_path": "/5Wf9Y6gucbu1LMe1FyqD8TQjaNM.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                10759,
+                35
+            ],
+            "popularity": 84.276,
+            "first_air_date": "2016-07-12",
+            "vote_average": 8.55,
+            "vote_count": 802,
+            "origin_country": [
+                "JP"
+            ]
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zkc2FkVymJDNXisS1mgpr8Ip2J.jpg",
+            "id": 62110,
+            "name": "Assassination Classroom",
+            "original_language": "ja",
+            "original_name": "暗殺教室",
+            "overview": "The students of class 3-E have a mission: kill their teacher before graduation. He has already destroyed the moon, and has promised to destroy the Earth if he can not be killed within a year. But how can this class of misfits kill a tentacled monster, capable of reaching Mach 20 speed, who may be the best teacher any of them have ever had?",
+            "poster_path": "/qf0l0nQ2t06Es3cSXflqx6l6vsJ.jpg",
+            "media_type": "tv",
+            "genre_ids": [
+                16,
+                35,
+                10759,
+                10765
+            ],
+            "popularity": 66.314,
+            "first_air_date": "2015-01-10",
+            "vote_average": 8.525,
+            "vote_count": 805,
+            "origin_country": [
+                "JP"
+            ]
+        }
+    ],
+    "total_pages": 2,
+    "total_results": 40
+}
