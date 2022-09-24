@@ -12,7 +12,6 @@ class Tvseries extends Equatable {
     required this.posterPath,
     required this.firstAirDate,
     required this.name,
-    required this.video,
     required this.voteAverage,
     required this.voteCount,
   });
@@ -33,7 +32,6 @@ class Tvseries extends Equatable {
   String? posterPath;
   String? firstAirDate;
   String? name;
-  bool? video;
   double? voteAverage;
   int? voteCount;
 
@@ -48,7 +46,6 @@ class Tvseries extends Equatable {
         posterPath,
         firstAirDate,
         name,
-        video,
         voteAverage,
         voteCount,
       ];

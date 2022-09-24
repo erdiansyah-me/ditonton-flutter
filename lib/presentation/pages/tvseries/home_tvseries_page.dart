@@ -60,7 +60,7 @@ class _HomeTvseriesPageState extends State<HomeTvseriesPage> {
                 } else if (state == RequestState.Loaded) {
                   return TvseriesList(data.onTheAirSeries);
                 } else {
-                  return Text('Failed');
+                  return Text(data.message);
                 }
               }),
               _buildSubHeading(
@@ -77,7 +77,7 @@ class _HomeTvseriesPageState extends State<HomeTvseriesPage> {
                 } else if (state == RequestState.Loaded) {
                   return TvseriesList(data.popularSeries);
                 } else {
-                  return Text('Failed');
+                  return Text(data.message);
                 }
               }),
               _buildSubHeading(
@@ -94,7 +94,7 @@ class _HomeTvseriesPageState extends State<HomeTvseriesPage> {
                 } else if (state == RequestState.Loaded) {
                   return TvseriesList(data.topRatedSeries);
                 } else {
-                  return Text('Failed');
+                  return Text(data.message);
                 }
               }),
             ],
