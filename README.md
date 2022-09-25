@@ -1,6 +1,6 @@
 # a199-flutter-expert-project
 
-Repository ini merupakan starter project submission kelas Flutter Expert Dicoding Indonesia.
+sebuah repositori dari Submisi proyek pada kelas flutter expert dicoding indonesia
 
 ---
 
