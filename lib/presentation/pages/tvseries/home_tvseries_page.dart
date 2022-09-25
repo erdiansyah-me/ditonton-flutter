@@ -4,6 +4,7 @@ import 'package:ditonton/domain/entities/Tvseries.dart';
 import 'package:ditonton/presentation/pages/search_page.dart';
 import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/tvseries/popular_tvseries_page.dart';
+import 'package:ditonton/presentation/pages/tvseries/top_rated_tvseries_page.dart';
 import 'package:ditonton/presentation/pages/tvseries/tvseries_detail_page.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/presentation/provider/tvseries/tvseries_list_notifier.dart';
@@ -83,7 +84,7 @@ class _HomeTvseriesPageState extends State<HomeTvseriesPage> {
               _buildSubHeading(
                 title: 'Top Rated',
                 onTap: () =>
-                    Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
+                    Navigator.pushNamed(context, TopRatedTvseriesPage.ROUTE_NAME),
               ),
               Consumer<TvseriesListNotifier>(builder: (context, data, child) {
                 final state = data.topRatedState;
