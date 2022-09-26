@@ -25,26 +25,26 @@ class TvseriesDetail extends Equatable {
     required this.voteCount,
   });
 
-  final String backdropPath;
-  final DateTime firstAirDate;
-  final List<Genre> genres;
-  final String homepage;
+  final String? backdropPath;
+  final DateTime? firstAirDate;
+  final List<Genre>? genres;
+  final String? homepage;
   final int id;
-  final bool inProduction;
-  final List<String> languages;
-  final DateTime lastAirDate;
-  final String name;
-  final int numberOfEpisodes;
-  final int numberOfSeasons;
-  final String originalName;
-  final String overview;
-  final double popularity;
-  final String posterPath;
-  final String status;
-  final String tagline;
-  final String type;
-  final double voteAverage;
-  final int voteCount;
+  final bool? inProduction;
+  final List<String>? languages;
+  final DateTime? lastAirDate;
+  final String? name;
+  final int? numberOfEpisodes;
+  final int? numberOfSeasons;
+  final String? originalName;
+  final String? overview;
+  final double? popularity;
+  final String? posterPath;
+  final String? status;
+  final String? tagline;
+  final String? type;
+  final double? voteAverage;
+  final int? voteCount;
   
   @override
   List<Object?> get props => [

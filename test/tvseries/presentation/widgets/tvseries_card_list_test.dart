@@ -19,7 +19,6 @@ void main() {
       final textWidgetFinder = find.byType(Text);
       final progressBarFinder = find.byType(CircularProgressIndicator);
       final textFinder = find.text(testTvseries.name!);
-      final inkWellFinder = find.byType(InkWell);
       expect(textFinder, findsOneWidget);
       expect(posterFinder, findsOneWidget);
       expect(textWidgetFinder, findsWidgets);

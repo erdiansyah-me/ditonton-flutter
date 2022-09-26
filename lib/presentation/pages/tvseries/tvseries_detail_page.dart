@@ -102,7 +102,7 @@ class DetailContent extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              series.name,
+                              series.name ?? '-',
                               style: kHeading5,
                             ),
                             ElevatedButton(
@@ -153,17 +153,17 @@ class DetailContent extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              _showGenres(series.genres),
+                              _showGenres(series.genres ?? []),
                             ),
                             Text('${series.numberOfEpisodes} Episodes '),
                             Text('${series.numberOfSeasons} Seasons '),
                             Text('First Air Date: ${series.firstAirDate}'),
                             Text('Last Air Date: ${series.lastAirDate}'),
-                            Text(series.status),
+                            Text(series.status ?? '-'),
                             Row(
                               children: [
                                 RatingBarIndicator(
-                                  rating: series.voteAverage / 2,
+                                  rating: series.voteAverage ?? 2 / 2 ,
                                   itemCount: 5,
                                   itemBuilder: (context, index) => Icon(
                                     Icons.star,
@@ -180,7 +180,7 @@ class DetailContent extends StatelessWidget {
                               style: kHeading6,
                             ),
                             Text(
-                              series.overview,
+                              series.overview ?? '-',
                             ),
                             SizedBox(height: 16),
                             Text(

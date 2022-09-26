@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/domain/entities/Tvseries.dart';
 import 'package:ditonton/presentation/pages/search_page.dart';
-import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/tvseries/popular_tvseries_page.dart';
 import 'package:ditonton/presentation/pages/tvseries/top_rated_tvseries_page.dart';
 import 'package:ditonton/presentation/pages/tvseries/tvseries_detail_page.dart';

@@ -53,43 +53,8 @@ void main() {
 
   group('tvseries detail model', () {
     test('should be a subclass of TvseriesDetail Entity', (){
-    final result = tTvseriesDetaiResponse.toEntity();
-    expect(result, tTvseriesDetail);
-  });
-
-  test('should return json map with data', () {
-    final result = tTvseriesDetaiResponse.toJson();
-
-    final expectedJsonMap = {
-      "backdrop_path": "backdropPath",
-      "first_air_date": "2021-01-01",
-      "genres": [
-        {
-          "id": 1,
-          "name": "name"
-        },
-      ],
-      "homepage": "homepage",
-      "id": 1,
-      "in_production": false,
-      "languages": [
-        "En"
-      ],
-      "last_air_date": "2021-01-01",
-      "name": "name",
-      "number_of_episodes": 1,
-      "number_of_seasons": 1,
-      "original_name": "originalName",
-      "overview": "overview",
-      "popularity": 1,
-      "poster_path": "posterPath",
-      "status": "status",
-      "tagline": "tagline",
-      "type": "type",
-      "vote_average": 1,
-      "vote_count": 1
-    };
-    expect(result, expectedJsonMap);
-  });
+      final result = tTvseriesDetaiResponse.toEntity();
+      expect(result, tTvseriesDetail);
+    });
   });
 }
