@@ -1,5 +1,7 @@
 import 'package:core/common/constants.dart';
 import 'package:core/common/state_enum.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tvseries/presentation/bloc/tvseries_search/tvseries_search_bloc.dart';
 import 'package:tvseries/presentation/provider/tvseries_search_notifier.dart';
 import 'package:tvseries/presentation/widget/tvseries_card_list.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +22,8 @@ class TvseriesSearchPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
-              onSubmitted: (query) {
-                Provider.of<TvseriesSearchNotifier>(context, listen: false)
-                    .fetchTvseriesSearch(query);
+              onChanged: (query) {
+                context.read<TvseriesSearchBloc>().add(OnQueryChanged(query));
               },
               decoration: InputDecoration(
                 hintText: 'Search title',
@@ -36,25 +37,31 @@ class TvseriesSearchPage extends StatelessWidget {
               'Search Result',
               style: kHeading6,
             ),
-            Consumer<TvseriesSearchNotifier>(
-              builder: (context, data, child) {
-                if (data.state == RequestState.Loading) {
+            BlocBuilder<TvseriesSearchBloc, TvseriesSearchState>(
+              builder: (context, state) {
+                if (state is SearchLoading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (data.state == RequestState.Loaded) {
-                  final result = data.searchSeriesResult;
+                } else if (state is SearchHasData) {
+                  final result = state.result;
                   return Expanded(
                     child: ListView.builder(
                       padding: const EdgeInsets.all(8),
                       itemBuilder: (context, index) {
-                        final series = data.searchSeriesResult[index];
+                        final series = result[index];
                         return TvseriesCard(series);
                       },//
                       itemCount: result.length,
                     ),
                   );
-                } else {
+                } else if (state is SearchError) {
+                  return Expanded(
+                    child: Center(
+                      child: Text(state.message),
+                    ),
+                  );
+                }else {
                   return Expanded(
                     child: Container(),
                   );

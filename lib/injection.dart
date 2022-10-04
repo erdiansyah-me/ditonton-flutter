@@ -7,6 +7,18 @@ import 'package:get_it/get_it.dart';
 final locator = GetIt.instance;
 
 void init() {
+  //bloc
+  locator.registerFactory(() => MovieSearchBloc(
+        locator(),
+      ));
+
+  //bloc tvseries
+  locator.registerFactory(
+    () => TvseriesSearchBloc(
+      locator(),
+    ),
+  );
+
   // provider
   locator.registerFactory(
     () => MovieListNotifier(
@@ -129,9 +141,9 @@ void init() {
 
   // tvseries datasource
   locator.registerLazySingleton<TvseriesRemoteDataSource>(
-    () => TvseriesRemoteDataSourceImpl(client: locator()));
+      () => TvseriesRemoteDataSourceImpl(client: locator()));
   locator.registerLazySingleton<TvseriesLocalDataSource>(
-    () => TvseriesLocalDataSourceImpl(databaseHelper: locator()));
+      () => TvseriesLocalDataSourceImpl(databaseHelper: locator()));
 
   // helper
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());

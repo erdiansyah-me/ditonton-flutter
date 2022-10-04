@@ -29,3 +29,4 @@ export 'domain/usecases/search_movies.dart';
 export 'data/repositories/movie_repository_impl.dart';
 export 'data/datasources/movie_local_data_source.dart';
 export 'data/datasources/movie_remote_data_source.dart';
+export 'presentation/bloc/movie_search/movie_search_bloc.dart';

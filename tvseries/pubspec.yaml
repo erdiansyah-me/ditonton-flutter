@@ -18,6 +18,9 @@ dependencies:
   provider: ^6.0.3
   core:
     path: ../core
+  flutter_bloc: ^8.0.0
+  rxdart: ^0.27.1
+  bloc_test: ^9.0.0
 
 dev_dependencies:
   flutter_test:

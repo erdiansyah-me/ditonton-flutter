@@ -28,4 +28,5 @@ export 'domain/usecase/search_tvseries.dart';
 export 'data/repository/tvseries_repository_impl.dart';
 export 'data/datasource/tvseries_local_data_source.dart';
 export 'data/datasource/tvseries_remote_data_source.dart';
+export 'presentation/bloc/tvseries_search/tvseries_search_bloc.dart';
 

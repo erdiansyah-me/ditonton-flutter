@@ -1,5 +1,6 @@
 import 'package:core/common/constants.dart';
 import 'package:core/common/utils.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/movie.dart';
 import 'package:tvseries/tvseries.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,6 +35,14 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => di.locator<WatchlistMovieNotifier>(),
+        ),
+
+        BlocProvider(
+          create: (_) => di.locator<MovieSearchBloc>(),
+        ),
+
+        BlocProvider(
+          create:  (_) => di.locator<TvseriesSearchBloc>(),
         ),
 
         ChangeNotifierProvider(
