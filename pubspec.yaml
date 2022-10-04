@@ -42,6 +42,8 @@ dependencies:
     path: tvseries
   movie:
     path: movie
+  core:
+    path: core
 
 dev_dependencies:
   mockito: ^5.0.8

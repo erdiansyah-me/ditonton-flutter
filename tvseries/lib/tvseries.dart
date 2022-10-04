@@ -1,7 +1,31 @@
 library tvseries;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'presentation/page/home_tvseries_page.dart';
+export 'presentation/page/popular_tvseries_page.dart';
+export 'presentation/page/top_rated_tvseries_page.dart';
+export 'presentation/page/tvseries_detail_page.dart';
+export 'presentation/page/tvseries_search_page.dart';
+export 'presentation/page/watchlist_tvseries_page.dart';
+export 'presentation/provider/popular_tvseries_notifier.dart';
+export 'presentation/provider/top_rated_tvseries_notifier.dart';
+export 'presentation/provider/tvseries_detail_notifier.dart';
+export 'presentation/provider/tvseries_list_notifier.dart';
+export 'presentation/provider/tvseries_search_notifier.dart';
+export 'presentation/provider/watchlist_tvseries_notifier.dart';
+export 'domain/entities/Tvseries.dart';
+export 'domain/entities/Tvseries_detail.dart';
+export 'domain/repository/tvseries_repository.dart';
+export 'domain/usecase/get_on_the_air_tvseries.dart';
+export 'domain/usecase/get_popular_tvseries.dart';
+export 'domain/usecase/get_top_rated_tvseries.dart';
+export 'domain/usecase/get_tvseries_detail.dart';
+export 'domain/usecase/get_tvseries_recommendation.dart';
+export 'domain/usecase/get_tvseries_watchlist_status.dart';
+export 'domain/usecase/get_watchlist_tvseries.dart';
+export 'domain/usecase/remove_tvseries_watchlist.dart';
+export 'domain/usecase/save_tvseries_watchlist.dart';
+export 'domain/usecase/search_tvseries.dart';
+export 'data/repository/tvseries_repository_impl.dart';
+export 'data/datasource/tvseries_local_data_source.dart';
+export 'data/datasource/tvseries_remote_data_source.dart';
+

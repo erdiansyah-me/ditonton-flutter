@@ -1,0 +1,69 @@
+import 'package:core/common/constants.dart';
+import 'package:core/common/state_enum.dart';
+import 'package:tvseries/presentation/provider/tvseries_search_notifier.dart';
+import 'package:tvseries/presentation/widget/tvseries_card_list.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class TvseriesSearchPage extends StatelessWidget {
+  static const ROUTE_NAME = '/tvseries-search';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Search Tv Series'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              onSubmitted: (query) {
+                Provider.of<TvseriesSearchNotifier>(context, listen: false)
+                    .fetchTvseriesSearch(query);
+              },
+              decoration: InputDecoration(
+                hintText: 'Search title',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(),
+              ),
+              textInputAction: TextInputAction.search,
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Search Result',
+              style: kHeading6,
+            ),
+            Consumer<TvseriesSearchNotifier>(
+              builder: (context, data, child) {
+                if (data.state == RequestState.Loading) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (data.state == RequestState.Loaded) {
+                  final result = data.searchSeriesResult;
+                  return Expanded(
+                    child: ListView.builder(
+                      padding: const EdgeInsets.all(8),
+                      itemBuilder: (context, index) {
+                        final series = data.searchSeriesResult[index];
+                        return TvseriesCard(series);
+                      },//
+                      itemCount: result.length,
+                    ),
+                  );
+                } else {
+                  return Expanded(
+                    child: Container(),
+                  );
+                }
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
