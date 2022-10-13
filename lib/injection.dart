@@ -3,18 +3,83 @@ import 'package:movie/movie.dart';
 import 'package:core/core.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
+import 'package:core/common/secure_http_client.dart';
 
 final locator = GetIt.instance;
 
-void init() {
+void init(){
   //bloc
-  locator.registerFactory(() => MovieSearchBloc(
-        locator(),
-      ));
+  locator.registerFactory(
+    () => MovieSearchBloc(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => HomeMovieCubit(
+      locator(),
+      locator(),
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => MovieDetailCubit(
+      locator(),
+      locator(),
+      locator(),
+      locator(),
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () =>PopularMovieCubit(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TopRatedMovieCubit(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => WatchlistMovieCubit(
+      locator(),
+    ),
+  );
 
   //bloc tvseries
   locator.registerFactory(
     () => TvseriesSearchBloc(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => PopularTvseriesCubit(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TopRatedTvseriesCubit(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => WatchlistTvseriesCubit(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TvseriesListCubit(
+      locator(),
+      locator(),
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TvseriesDetailCubit(
+      locator(),
+      locator(),
+      locator(),
+      locator(),
       locator(),
     ),
   );
@@ -147,7 +212,7 @@ void init() {
 
   // helper
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
-
   // external
-  locator.registerLazySingleton(() => http.Client());
+  // final client = await SecureHttpClient.secureCertificatedClient();
+  locator.registerSingletonAsync<http.Client>(() async => SecureHttpClient.secureCertificatedClient());
 }

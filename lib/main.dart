@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:core/common/constants.dart';
 import 'package:core/common/utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:ditonton/injection.dart' as di;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   di.init();
   runApp(MyApp());
 }
@@ -40,10 +43,41 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => di.locator<MovieSearchBloc>(),
         ),
+        BlocProvider(
+          create: (_) => di.locator<HomeMovieCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<PopularMovieCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<MovieDetailCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<TopRatedMovieCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<WatchlistMovieCubit>(),
+        ),
 
         BlocProvider(
           create:  (_) => di.locator<TvseriesSearchBloc>(),
         ),
+        BlocProvider(
+          create:  (_) => di.locator<PopularTvseriesCubit>(),
+        ),
+        BlocProvider(
+          create:  (_) => di.locator<TopRatedTvseriesCubit>(),
+        ),
+        BlocProvider(
+          create:  (_) => di.locator<WatchlistTvseriesCubit>(),
+        ),
+        BlocProvider(
+          create:  (_) => di.locator<TvseriesListCubit>(),
+        ),
+        BlocProvider(
+          create:  (_) => di.locator<TvseriesDetailCubit>(),
+        ),
+
 
         ChangeNotifierProvider(
           create: (_) => di.locator<TvseriesListNotifier>(),

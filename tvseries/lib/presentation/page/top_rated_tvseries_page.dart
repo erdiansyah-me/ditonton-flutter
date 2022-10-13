@@ -1,4 +1,6 @@
 import 'package:core/common/state_enum.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tvseries/presentation/bloc/cubit/top_rated_tvseries/top_rated_tvseries_cubit.dart';
 import 'package:tvseries/presentation/provider/top_rated_tvseries_notifier.dart';
 import 'package:tvseries/presentation/widget/tvseries_card_list.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +18,7 @@ class _TopRatedTvseriesPageState extends State<TopRatedTvseriesPage> {
   void initState() {
     super.initState();
     Future.microtask(() =>
-        Provider.of<TopRatedSeriesNotifier>(context, listen: false)
-            .fetchTopRatedSeries());
+      context.read<TopRatedTvseriesCubit>().fetchTopRatedSeries());
   }
 
   @override
@@ -28,26 +29,27 @@ class _TopRatedTvseriesPageState extends State<TopRatedTvseriesPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<TopRatedSeriesNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<TopRatedTvseriesCubit, TopRatedTvseriesState>(
+          builder: (context, state) {
+            if (state is TopRatedLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is TopRatedHasData) {
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final series = data.series[index];
+                  final series = state.result[index];
                   return TvseriesCard(series);
                 },
-                itemCount: data.series.length,
+                itemCount: state.result.length,
               );
-            } else {
+            } else if (state is TopRatedError) {
               return Center(
-                key: Key('error_message'),
-                child: Text(data.message),
+                key: const Key('error_message'),
+                child: Text(state.message),
               );
             }
+            return Container();
           },
         ),
       ),

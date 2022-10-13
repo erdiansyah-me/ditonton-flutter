@@ -29,4 +29,9 @@ export 'data/repository/tvseries_repository_impl.dart';
 export 'data/datasource/tvseries_local_data_source.dart';
 export 'data/datasource/tvseries_remote_data_source.dart';
 export 'presentation/bloc/tvseries_search/tvseries_search_bloc.dart';
+export 'presentation/bloc/cubit/popular_tvseries/popular_tvseries_cubit.dart';
+export 'presentation/bloc/cubit/top_rated_tvseries/top_rated_tvseries_cubit.dart';
+export 'presentation/bloc/cubit/tvseries_detail/tvseries_detail_cubit.dart';
+export 'presentation/bloc/cubit/tvseries_list/tvseries_list_cubit.dart';
+export 'presentation/bloc/cubit/watchlist_tvseries/watchlist_tvseries_cubit.dart';
 

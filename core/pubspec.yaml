@@ -17,6 +17,8 @@ dependencies:
     path: ../tvseries
   movie:
     path: ../movie
+  http: ^0.13.3
+  provider: ^6.0.3
 
 dev_dependencies:
   flutter_test:
@@ -30,8 +32,8 @@ dev_dependencies:
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - certificates/certificate.pem
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

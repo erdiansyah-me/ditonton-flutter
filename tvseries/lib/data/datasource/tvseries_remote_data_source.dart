@@ -1,6 +1,9 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:core/common/exception.dart';
+import 'package:flutter/services.dart';
+import 'package:http/io_client.dart';
 import 'package:tvseries/data/model/tvseries_detail_model.dart';
 import 'package:tvseries/data/model/tvseries_model.dart';
 import 'package:tvseries/data/model/tvseries_response.dart';
@@ -23,8 +26,15 @@ class TvseriesRemoteDataSourceImpl implements TvseriesRemoteDataSource {
 
   TvseriesRemoteDataSourceImpl({required this.client});
 
+  Future<SecurityContext> get globalContext async {
+    final sslCertificate = await rootBundle.load('packages/tvseries/certificates/certificate.pem');
+    SecurityContext securityContext = SecurityContext(withTrustedRoots: false);
+    securityContext.setTrustedCertificatesBytes(sslCertificate.buffer.asInt8List());
+    return securityContext;
+  }
   @override
   Future<List<TvseriesModel>> getOnTheAirSeries() async {
+
     final response =
         await client.get(Uri.parse('$BASE_URL/tv/on_the_air?$API_KEY'));
 
@@ -37,6 +47,7 @@ class TvseriesRemoteDataSourceImpl implements TvseriesRemoteDataSource {
 
   @override
   Future<List<TvseriesModel>> getPopularSeries() async {
+
     final response =
         await client.get(Uri.parse('$BASE_URL/tv/popular?$API_KEY'));
 
@@ -61,6 +72,7 @@ class TvseriesRemoteDataSourceImpl implements TvseriesRemoteDataSource {
 
   @override
   Future<List<TvseriesModel>> getTopRatedSeries() async {
+
     final response =
         await client.get(Uri.parse('$BASE_URL/tv/top_rated?$API_KEY'));
 
@@ -73,6 +85,7 @@ class TvseriesRemoteDataSourceImpl implements TvseriesRemoteDataSource {
 
   @override
   Future<TvseriesDetailResponse> getTvseriesDetail(int id) async {
+
     final response =
         await client.get(Uri.parse('$BASE_URL/tv/$id?$API_KEY'));
 
@@ -85,6 +98,7 @@ class TvseriesRemoteDataSourceImpl implements TvseriesRemoteDataSource {
 
   @override
   Future<List<TvseriesModel>> searchSeries(String query) async {
+
     final response =
         await client.get(Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$query'));
 
