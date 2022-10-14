@@ -3,7 +3,6 @@ import 'package:movie/movie.dart';
 import 'package:core/core.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
-import 'package:core/common/secure_http_client.dart';
 
 final locator = GetIt.instance;
 
@@ -214,5 +213,5 @@ void init(){
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
   // external
   // final client = await SecureHttpClient.secureCertificatedClient();
-  locator.registerSingletonAsync<http.Client>(() async => SecureHttpClient.secureCertificatedClient());
+  locator.registerSingletonAsync<http.Client>(() async => http.Client());
 }

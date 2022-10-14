@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:core/common/constants.dart';
 import 'package:core/common/utils.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/movie.dart';
 import 'package:tvseries/tvseries.dart';
@@ -10,9 +11,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ditonton/injection.dart' as di;
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   di.init();
+  di.locator.allReady();
   runApp(MyApp());
 }
 
