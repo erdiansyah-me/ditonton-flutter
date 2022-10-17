@@ -1,76 +1,73 @@
+import 'package:bloc_test/bloc_test.dart';
 import 'package:core/common/state_enum.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:tvseries/domain/entities/Tvseries.dart';
 import 'package:tvseries/presentation/bloc/cubit/tvseries_list/tvseries_list_cubit.dart';
 import 'package:tvseries/presentation/page/home_tvseries_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 
+import '../../dummy_data/tvseries_dummy_objects.dart';
 
-
-@GenerateMocks([TvseriesListCubit])
+class FakeTvseriesListState extends Fake implements TvseriesListState {}
+class MockTvseriesListCubit extends MockCubit<TvseriesListState> implements TvseriesListCubit {}
 void main() {
-  // late MockTvseriesListNotifier mockProvider;
+  late MockTvseriesListCubit mockCubit;
 
-  // setUp(() {
-  //   mockProvider = MockTvseriesListNotifier();
-  // });
+  setUp(() {
+    mockCubit = MockTvseriesListCubit();
+  });
 
-  // Widget _makeTestableWidget(Widget body) {
-  //   return ChangeNotifierProvider<TvseriesListNotifier>.value(
-  //     value: mockProvider,
-  //     child: MaterialApp(
-  //       home: body,
-  //     ),
-  //   );
-  // }
+  Widget _makeTestableWidget(Widget body) {
+    return BlocProvider<TvseriesListCubit>.value(
+      value: mockCubit,
+      child: MaterialApp(
+        home: body,
+      ),
+    );
+  }
 
-  // group('tvseries list page', () {
-  //   testWidgets('should display loading progress when data loading',
-  //       ((WidgetTester tester) async {
-  //     when(mockProvider.onTheAirState).thenReturn(RequestState.Loading);
-  //     when(mockProvider.popularState).thenReturn(RequestState.Loading);
-  //     when(mockProvider.topRatedState).thenReturn(RequestState.Loading);
+  group('tvseries list page', () {
+    testWidgets('should display loading progress when data loading',
+        ((WidgetTester tester) async {
+      when(() => mockCubit.state).thenReturn(ListLoading());
+      when(() => mockCubit.fetchListSeries()).thenAnswer((realInvocation) async => realInvocation);
+      whenListen(mockCubit, Stream.fromIterable([ListLoading()]));
 
-  //     final progressBarFinder = find.byType(CircularProgressIndicator);
-  //     final centerFinder = find.byType(Center);
+      final progressBarFinder = find.byType(CircularProgressIndicator);
+      final centerFinder = find.byType(Center);
 
-  //     await tester.pumpWidget(_makeTestableWidget(HomeTvseriesPage()));
+      await tester.pumpWidget(_makeTestableWidget(const HomeTvseriesPage()));
 
-  //     expect(centerFinder, findsWidgets);
-  //     expect(progressBarFinder, findsWidgets);
-  //   }));
+      expect(centerFinder, findsWidgets);
+      expect(progressBarFinder, findsWidgets);
+    }));
 
-  //   testWidgets('should display listview when data loaded',
-  //       ((WidgetTester tester) async {
-  //     when(mockProvider.onTheAirState).thenReturn(RequestState.Loaded);
-  //     when(mockProvider.onTheAirSeries).thenReturn(<Tvseries>[]);
-  //     when(mockProvider.popularState).thenReturn(RequestState.Loaded);
-  //     when(mockProvider.popularSeries).thenReturn(<Tvseries>[]);
-  //     when(mockProvider.topRatedState).thenReturn(RequestState.Loaded);
-  //     when(mockProvider.topRatedSeries).thenReturn(<Tvseries>[]);
+    testWidgets('should display listview when data loaded',
+        ((WidgetTester tester) async {
+      when(() => mockCubit.state).thenReturn(ListHasData(onTheAirSeriesResult: testTvseriesList, popularSeriesResult: testTvseriesList, topRatedSeriesResult: testTvseriesList));
+      when(() => mockCubit.fetchListSeries()).thenAnswer((realInvocation) async => realInvocation);
+      whenListen(mockCubit, Stream.fromIterable([ListHasData(onTheAirSeriesResult: testTvseriesList, popularSeriesResult: testTvseriesList, topRatedSeriesResult: testTvseriesList)]));
 
-  //     final listviewFinder = find.byType(ListView);
+      final listviewFinder = find.byType(ListView);
 
-  //     await tester.pumpWidget(_makeTestableWidget(HomeTvseriesPage()));
+      await tester.pumpWidget(_makeTestableWidget(const HomeTvseriesPage()));
       
-  //     expect(listviewFinder, findsNWidgets(3));
-  //   }));
+      expect(listviewFinder, findsNWidgets(3));
+    }));
 
-  //   testWidgets('should display error message when data Error',
-  //       ((WidgetTester tester) async {
-  //     when(mockProvider.onTheAirState).thenReturn(RequestState.Error);
-  //     when(mockProvider.popularState).thenReturn(RequestState.Error);
-  //     when(mockProvider.topRatedState).thenReturn(RequestState.Error);
-  //     when(mockProvider.message).thenReturn('Failed');
+    testWidgets('should display error message when data Error',
+        ((WidgetTester tester) async {
+      when(() => mockCubit.state).thenReturn(const ListError('message'));
+      when(() => mockCubit.fetchListSeries()).thenAnswer((realInvocation) async => realInvocation);
+      whenListen(mockCubit, Stream.fromIterable([const ListError('message')]));
 
-  //     final messageFinder = find.text('Failed');
+      final messageFinder = find.text('message');
 
-  //     await tester.pumpWidget(_makeTestableWidget(HomeTvseriesPage()));
+      await tester.pumpWidget(_makeTestableWidget(const HomeTvseriesPage()));
       
-  //     expect(messageFinder, findsNWidgets(3));
-  //   }));
-  // });
+      expect(messageFinder, findsNWidgets(3));
+    }));
+  });
 }

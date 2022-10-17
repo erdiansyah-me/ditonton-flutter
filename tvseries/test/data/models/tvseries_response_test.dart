@@ -25,7 +25,7 @@ void main() {
 
   group('from json', (){
     test('should return model from json', () {
-      final Map<String, dynamic> jsonMap = json.decode(readJson('tvseries/dummy_data/on_the_air_tvseries.json'));
+      final Map<String, dynamic> jsonMap = json.decode(readJson('dummy_data/on_the_air_tvseries.json'));
 
       final result = TvseriesResponse.fromJson(jsonMap);
 

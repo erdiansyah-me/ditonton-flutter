@@ -1,69 +1,75 @@
-import 'package:core/common/state_enum.dart';
-import 'package:tvseries/domain/entities/Tvseries.dart';
-import 'package:tvseries/presentation/bloc/tvseries_search/tvseries_search_bloc.dart';
-import 'package:tvseries/presentation/page/tvseries_search_page.dart';
+import 'package:bloc_test/bloc_test.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
+import 'package:tvseries/presentation/bloc/tvseries_search/tvseries_search_bloc.dart';
+import 'package:tvseries/tvseries.dart';
 
+import '../../dummy_data/tvseries_dummy_objects.dart';
 
-
-@GenerateMocks([TvseriesSearchBloc])
+class FakeTvseriesSearchEvent extends Fake implements TvseriesSearchEvent {}
+class FakeTvseriesSearchState extends Fake implements TvseriesSearchState {}
+class MockTvseriesSearchBloc extends MockBloc<TvseriesSearchEvent, TvseriesSearchState> implements TvseriesSearchBloc {}
 void main() {
-  // late MockTvseriesSearchNotifier mockProvider;
+  late MockTvseriesSearchBloc mockBloc;
+  String tQuery = 'attach on titan';
+  setUpAll(() {
+    registerFallbackValue(FakeTvseriesSearchEvent());
+    registerFallbackValue(FakeTvseriesSearchState());
+  });
+  setUp((){
+    mockBloc = MockTvseriesSearchBloc();
+  });
 
-  // setUp((){
-  //   mockProvider = MockTvseriesSearchNotifier();
-  // });
+  Widget _makeTestableWidget(Widget body) {
+    return BlocProvider<TvseriesSearchBloc>.value(
+      value: mockBloc,
+      child: MaterialApp(
+        home: body,
+      ),
+    );
+  }
+  group('search tv series page', () {
+    testWidgets('Page should display center progress bar when loading',
+      (WidgetTester tester) async {
+      when(() => mockBloc.state).thenReturn(SearchLoading());
 
-  // Widget _makeTestableWidget(Widget body) {
-  //   return ChangeNotifierProvider<TvseriesSearchNotifier>.value(
-  //     value: mockProvider,
-  //     child: MaterialApp(
-  //       home: body,
-  //     ),
-  //   );
-  // }
-  // group('search tv series page', () {
-  //   testWidgets('Page should display center progress bar when loading',
-  //     (WidgetTester tester) async {
-  //     when(mockProvider.state).thenReturn(RequestState.Loading);
+      final progressBarFinder = find.byType(CircularProgressIndicator);
 
-  //     final progressBarFinder = find.byType(CircularProgressIndicator);
+      await tester.pumpWidget(_makeTestableWidget(TvseriesSearchPage()));
 
-  //     await tester.pumpWidget(_makeTestableWidget(TvseriesSearchPage()));
+      expect(progressBarFinder, findsOneWidget);
+    });
 
-  //     expect(progressBarFinder, findsOneWidget);
-  //   });
+    testWidgets('Page should display listview when data loaded',
+      (WidgetTester tester) async {
+      when(() => mockBloc.state).thenReturn(SearchHasData(testTvseriesList));
+      when(() => mockBloc.add(OnQueryChanged(tQuery))).thenAnswer((realInvocation) async => realInvocation);
+      whenListen(mockBloc, Stream.fromIterable([SearchHasData(testTvseriesList)]));
 
-  //   testWidgets('Page should display listview when data loaded',
-  //     (WidgetTester tester) async {
-  //     when(mockProvider.state).thenReturn(RequestState.Loaded);
-  //     when(mockProvider.searchSeriesResult).thenReturn(<Tvseries>[]);
+      final listviewFinder = find.byType(ListView);
+      final textFieldFinder = find.byType(TextField);
 
-  //     final listviewFinder = find.byType(ListView);
-  //     final textFiledFinder = find.byType(TextField);
+      await tester.pumpWidget(_makeTestableWidget(TvseriesSearchPage()));
+      await tester.enterText(textFieldFinder, 'attack on titan');
+      await tester.testTextInput.receiveAction(TextInputAction.search);
+      await tester.pump();
 
-  //     await tester.pumpWidget(_makeTestableWidget(TvseriesSearchPage()));
-  //     await tester.enterText(textFiledFinder, 'attack on titan');
-  //     await tester.testTextInput.receiveAction(TextInputAction.search);
-  //     await tester.pump();
+      expect(listviewFinder, findsOneWidget);
+    });
 
-  //     expect(listviewFinder, findsOneWidget);
-  //   });
+    testWidgets('Page should display error text when error',
+      (WidgetTester tester) async {
+      when(() => mockBloc.state).thenReturn(SearchError('message'));
+      when(() => mockBloc.add(OnQueryChanged(tQuery))).thenAnswer((realInvocation) async => realInvocation);
+      whenListen(mockBloc, Stream.fromIterable([SearchError('message')]));
 
-  //   testWidgets('Page should display error text when error',
-  //     (WidgetTester tester) async {
-  //     when(mockProvider.state).thenReturn(RequestState.Error);
-  //     when(mockProvider.message).thenReturn('Error message');
+      final textFinder = find.text('message');
 
-  //     final containerFinder = find.byType(Container);
+      await tester.pumpWidget(_makeTestableWidget(TvseriesSearchPage()));
 
-  //     await tester.pumpWidget(_makeTestableWidget(TvseriesSearchPage()));
-
-  //     expect(containerFinder, findsOneWidget);
-  //   });
-  // });
+      expect(textFinder, findsOneWidget);
+    });
+  });
 }
