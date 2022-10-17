@@ -1,6 +1,11 @@
 
+import 'dart:async';
+
 import 'package:core/common/constants.dart';
 import 'package:core/common/utils.dart';
+import 'package:ditonton/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/movie.dart';
 import 'package:tvseries/tvseries.dart';
@@ -10,10 +15,19 @@ import 'package:provider/provider.dart';
 import 'package:ditonton/injection.dart' as di;
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  di.init();
-  await di.locator.allReady();
-  runApp(MyApp());
+  runZonedGuarded<Future<void>>(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    final crashlytics = FirebaseCrashlytics.instance;
+    FlutterError.onError = crashlytics.recordFlutterFatalError;
+    di.init();
+    await di.locator.allReady();
+    runApp(MyApp());
+  }, (error, stack) => 
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true)
+  );
 }
 
 class MyApp extends StatelessWidget {

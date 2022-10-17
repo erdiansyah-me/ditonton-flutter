@@ -19,7 +19,7 @@ dependencies:
     path: ../core
   flutter_bloc: ^8.0.0
   rxdart: ^0.27.1
-  
+  firebase_crashlytics: ^2.9.0
 
 dev_dependencies:
   flutter_test:
