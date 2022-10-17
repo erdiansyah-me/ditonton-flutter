@@ -83,81 +83,6 @@ void init(){
     ),
   );
 
-  // provider
-  locator.registerFactory(
-    () => MovieListNotifier(
-      getNowPlayingMovies: locator(),
-      getPopularMovies: locator(),
-      getTopRatedMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => MovieDetailNotifier(
-      getMovieDetail: locator(),
-      getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => MovieSearchNotifier(
-      searchMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => PopularMoviesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TopRatedMoviesNotifier(
-      getTopRatedMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
-    ),
-  );
-  //provider tvseries
-  locator.registerFactory(
-    () => TvseriesListNotifier(
-      getOnTheAirSeries: locator(),
-      getPopularSeries: locator(),
-      getTopRatedSeries: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TvseriesDetailNotifier(
-      getTvseriesDetail: locator(),
-      getSeriesRecommendation: locator(),
-      getSeriesWatchListStatus: locator(),
-      saveSeriesWatchlist: locator(),
-      removeSeriesWatchlist: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TvseriesSearchNotifier(
-      searchSeries: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => PopularSeriesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TopRatedSeriesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => WatchlistTvseriesNotifier(
-      getWatchlistSeries: locator(),
-    ),
-  );
-
   // use case
   locator.registerLazySingleton(() => GetNowPlayingMovies(locator()));
   locator.registerLazySingleton(() => GetPopularMovies(locator()));
@@ -213,5 +138,5 @@ void init(){
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
   // external
   // final client = await SecureHttpClient.secureCertificatedClient();
-  locator.registerSingletonAsync<http.Client>(() async => http.Client());
+  locator.registerSingletonAsync<http.Client>(() => SecureConnect.SecureHttp());
 }

@@ -18,9 +18,10 @@ void main() {
 
   late MovieRemoteDataSourceImpl dataSource;
   late MockHttpClient mockHttpClient;
-
+  
   setUp(() {
     mockHttpClient = MockHttpClient();
+    TestWidgetsFlutterBinding.ensureInitialized();
     dataSource = MovieRemoteDataSourceImpl(client: mockHttpClient);
   });
 

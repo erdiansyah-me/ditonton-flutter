@@ -37,7 +37,7 @@ class TvseriesListCubit extends Cubit<TvseriesListState> {
   }
 
   TvseriesListState stateList(List<List<Tvseries>> data) {
-    if (data.isEmpty || data.length < 3) {
+    if (data.isEmpty || data.length < 3 || data.where((element) => element.isNotEmpty).isEmpty) {
       return ListError('Failed Load Data');
     }
     return ListHasData(

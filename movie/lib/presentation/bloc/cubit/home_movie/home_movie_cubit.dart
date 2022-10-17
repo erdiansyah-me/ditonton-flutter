@@ -39,8 +39,8 @@ class HomeMovieCubit extends Cubit<HomeMovieState> {
   }
 
   HomeMovieState stateList(List<List<Movie>> data) {
-      if (data.isEmpty || data.length < 3) {
-        return HomeError('Failed to Load Data');
+      if (data.isEmpty || data.length < 3 || data.where((element) => element.isNotEmpty).isEmpty) {
+        return const HomeError('Failed to Load Data');
       }
       return HomeHasData(
         nowPlayingMovieResult: data.elementAt(0),

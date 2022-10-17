@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tvseries/domain/entities/Tvseries.dart';
 import 'package:tvseries/domain/entities/Tvseries_detail.dart';
 import 'package:tvseries/domain/entities/genre.dart';
-import 'package:core/common/state_enum.dart';
 import 'package:tvseries/presentation/bloc/cubit/tvseries_detail/tvseries_detail_cubit.dart';
-import 'package:tvseries/presentation/provider/tvseries_detail_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
 
 class TvseriesDetailPage extends StatefulWidget {
   static const ROUTE_NAME = '/detail-tvseries';

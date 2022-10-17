@@ -1,8 +1,6 @@
-import 'dart:io';
 
 import 'package:core/common/constants.dart';
 import 'package:core/common/utils.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/movie.dart';
 import 'package:tvseries/tvseries.dart';
@@ -14,7 +12,7 @@ import 'package:ditonton/injection.dart' as di;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   di.init();
-  di.locator.allReady();
+  await di.locator.allReady();
   runApp(MyApp());
 }
 
@@ -23,25 +21,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieListNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieDetailNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieSearchNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedMoviesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularMoviesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistMovieNotifier>(),
-        ),
-
         BlocProvider(
           create: (_) => di.locator<MovieSearchBloc>(),
         ),
@@ -78,26 +57,6 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create:  (_) => di.locator<TvseriesDetailCubit>(),
-        ),
-
-
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TvseriesListNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TvseriesDetailNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TvseriesSearchNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedSeriesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularSeriesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistTvseriesNotifier>(),
         ),
       ],
       child: MaterialApp(

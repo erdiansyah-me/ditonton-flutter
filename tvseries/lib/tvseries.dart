@@ -6,12 +6,7 @@ export 'presentation/page/top_rated_tvseries_page.dart';
 export 'presentation/page/tvseries_detail_page.dart';
 export 'presentation/page/tvseries_search_page.dart';
 export 'presentation/page/watchlist_tvseries_page.dart';
-export 'presentation/provider/popular_tvseries_notifier.dart';
-export 'presentation/provider/top_rated_tvseries_notifier.dart';
-export 'presentation/provider/tvseries_detail_notifier.dart';
-export 'presentation/provider/tvseries_list_notifier.dart';
-export 'presentation/provider/tvseries_search_notifier.dart';
-export 'presentation/provider/watchlist_tvseries_notifier.dart';
+
 export 'domain/entities/Tvseries.dart';
 export 'domain/entities/Tvseries_detail.dart';
 export 'domain/repository/tvseries_repository.dart';

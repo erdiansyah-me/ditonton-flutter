@@ -1,15 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/common/constants.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:movie/domain/entities/genre.dart';
 import 'package:movie/domain/entities/movie.dart';
 import 'package:movie/domain/entities/movie_detail.dart';
 import 'package:movie/presentation/bloc/cubit/movie_detail/movie_detail_cubit.dart';
-import 'package:movie/presentation/provider/movie_detail_notifier.dart';
-import 'package:core/common/state_enum.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
 
 class MovieDetailPage extends StatefulWidget {
   static const ROUTE_NAME = '/detail';
@@ -120,11 +117,11 @@ class DetailContent extends StatelessWidget {
                                         .message;
 
                                 if (message ==
-                                        MovieDetailNotifier
-                                            .watchlistAddSuccessMessage ||
+                                        MovieDetailCubit
+                                            .movieWatchlistAddSuccessMessage ||
                                     message ==
-                                        MovieDetailNotifier
-                                            .watchlistRemoveSuccessMessage) {
+                                        MovieDetailCubit
+                                            .movieWatchlistRemoveSuccessMessage) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(content: Text(message)));
                                 } else {

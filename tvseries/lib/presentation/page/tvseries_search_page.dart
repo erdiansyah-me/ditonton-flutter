@@ -1,11 +1,8 @@
 import 'package:core/common/constants.dart';
-import 'package:core/common/state_enum.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tvseries/presentation/bloc/tvseries_search/tvseries_search_bloc.dart';
-import 'package:tvseries/presentation/provider/tvseries_search_notifier.dart';
 import 'package:tvseries/presentation/widget/tvseries_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class TvseriesSearchPage extends StatelessWidget {
   static const ROUTE_NAME = '/tvseries-search';
@@ -14,7 +11,7 @@ class TvseriesSearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search Tv Series'),
+        title: const Text('Search Tv Series'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

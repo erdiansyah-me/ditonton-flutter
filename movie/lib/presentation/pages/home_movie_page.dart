@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/common/constants.dart';
-import 'package:core/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/domain/entities/movie.dart';
@@ -11,8 +10,6 @@ import 'package:movie/presentation/pages/popular_movies_page.dart';
 import 'package:movie/presentation/pages/search_page.dart';
 import 'package:movie/presentation/pages/top_rated_movies_page.dart';
 import 'package:movie/presentation/pages/watchlist_movies_page.dart';
-import 'package:movie/presentation/provider/movie_list_notifier.dart';
-import 'package:provider/provider.dart';
 import 'package:tvseries/presentation/page/home_tvseries_page.dart';
 import 'package:tvseries/presentation/page/watchlist_tvseries_page.dart';
 

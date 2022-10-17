@@ -1,11 +1,9 @@
-import 'package:core/common/state_enum.dart';
+
 import 'package:core/common/utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tvseries/presentation/bloc/cubit/watchlist_tvseries/watchlist_tvseries_cubit.dart';
-import 'package:tvseries/presentation/provider/watchlist_tvseries_notifier.dart';
 import 'package:tvseries/presentation/widget/tvseries_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class WatchlistTvseriesPage extends StatefulWidget {
   static const ROUTE_NAME = '/watchlist-tvseries';

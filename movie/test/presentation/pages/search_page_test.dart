@@ -1,26 +1,29 @@
-import 'package:core/common/state_enum.dart';
-import 'package:movie/domain/entities/movie.dart';
-import 'package:movie/presentation/pages/search_page.dart';
-import 'package:movie/presentation/provider/movie_search_notifier.dart';
+import 'package:bloc_test/bloc_test.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:movie/movie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 
-import 'search_page_test.mocks.dart';
+import '../../dummy_data/dummy_objects.dart';
 
-@GenerateMocks([MovieSearchNotifier])
+class FakeMovieSearchEvent extends Fake implements MovieSearchEvent {}
+class FakeMovieSearchState extends Fake implements MovieSearchState {}
+class MockMovieSearchBloc extends MockBloc<MovieSearchEvent, MovieSearchState> implements MovieSearchBloc {}
 void main() {
-  late MockMovieSearchNotifier mockProvider;
-
+  late MockMovieSearchBloc mockBloc;
+  String tQuery = 'attach on titan';
+  setUpAll(() {
+    registerFallbackValue(FakeMovieSearchEvent());
+    registerFallbackValue(FakeMovieSearchState());
+  });
   setUp((){
-    mockProvider = MockMovieSearchNotifier();
+    mockBloc = MockMovieSearchBloc();
   });
 
   Widget _makeTestableWidget(Widget body) {
-    return ChangeNotifierProvider<MovieSearchNotifier>.value(
-      value: mockProvider,
+    return BlocProvider<MovieSearchBloc>.value(
+      value: mockBloc,
       child: MaterialApp(
         home: body,
       ),
@@ -29,24 +32,25 @@ void main() {
   group('search tv series page', () {
     testWidgets('Page should display center progress bar when loading',
       (WidgetTester tester) async {
-      when(mockProvider.state).thenReturn(RequestState.Loading);
+      when(() => mockBloc.state).thenReturn(SearchLoading());
 
       final progressBarFinder = find.byType(CircularProgressIndicator);
 
-      await tester.pumpWidget(_makeTestableWidget(SearchPage()));
+      await tester.pumpWidget(_makeTestableWidget(const SearchPage()));
 
       expect(progressBarFinder, findsOneWidget);
     });
 
     testWidgets('Page should display listview when data loaded',
       (WidgetTester tester) async {
-      when(mockProvider.state).thenReturn(RequestState.Loaded);
-      when(mockProvider.searchResult).thenReturn(<Movie>[]);
+      when(() => mockBloc.state).thenReturn(SearchHasData(testMovieList));
+      when(() => mockBloc.add(OnQueryChanged(tQuery))).thenAnswer((realInvocation) async => realInvocation);
+      whenListen(mockBloc, Stream.fromIterable([SearchHasData(testMovieList)]));
 
       final listviewFinder = find.byType(ListView);
       final textFieldFinder = find.byType(TextField);
 
-      await tester.pumpWidget(_makeTestableWidget(SearchPage()));
+      await tester.pumpWidget(_makeTestableWidget(const SearchPage()));
       await tester.enterText(textFieldFinder, 'attack on titan');
       await tester.testTextInput.receiveAction(TextInputAction.search);
       await tester.pump();
@@ -56,14 +60,15 @@ void main() {
 
     testWidgets('Page should display error text when error',
       (WidgetTester tester) async {
-      when(mockProvider.state).thenReturn(RequestState.Error);
-      when(mockProvider.message).thenReturn('Error message');
+      when(() => mockBloc.state).thenReturn(const SearchError('message'));
+      when(() => mockBloc.add(OnQueryChanged(tQuery))).thenAnswer((realInvocation) async => realInvocation);
+      whenListen(mockBloc, Stream.fromIterable([const SearchError('message')]));
 
-      final containerFinder = find.byType(Container);
+      final textFinder = find.text('message');
 
-      await tester.pumpWidget(_makeTestableWidget(SearchPage()));
+      await tester.pumpWidget(_makeTestableWidget(const SearchPage()));
 
-      expect(containerFinder, findsOneWidget);
+      expect(textFinder, findsOneWidget);
     });
   });
 }
